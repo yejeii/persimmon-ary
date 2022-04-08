@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div include-html="header.html"></div>
+
+        <script>
+            function includeHTML() {
+                var z,
+                    i,
+                    elmnt,
+                    file,
+                    xhttp;
+                z = document.getElementsByTagName("*");
+                for (i = 0; i < z.length; i++) {
+                    elmnt = z[1];
+                    file = elmnt.getAttribute("include-html");
+                    if (file) {
+                        xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                elmnt.innerHTML = this.responseText;
+                                elmnt.removeAttribute("include-html");
+                                includeHTML();
+                            }
+                        }
+                        xhttp.open("GET", file, true);
+                        xhttp.send();
+                        return;
+                    }
+                }
+            }
+
+            includeHTML();
+        </script>
+
+        <h2>CSS란 무엇인가?</h2>
+        <p style="margin-top: 40px;">
+            Cascading Style Sheets (CSS) is a style sheet language used for describing the
+            presentation of a document written in a markup language such as HTML.[1] CSS is
+            a cornerstone technology of the World Wide Web, alongside HTML and
+            JavaScript.[2] CSS is designed to enable the separation of presentation and
+            content, including layout, colors, and fonts.[3] This separation can improve
+            content accessibility; provide more flexibility and control in the specification
+            of presentation characteristics; enable multiple web pages to share formatting
+            by specifying the relevant CSS in a separate .css file, which reduces complexity
+            and repetition in the structural content
+        </p>
+    </body>
+</html>
