@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-    <!-- 브라우저가 이 문서를 UTF-8로 인코딩할 것을 지시 -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>WEB1 - CSS</title>
+    <title>WEB1 - WEB</title>
 </head>
 <body>
     <header id="header">
@@ -34,21 +33,23 @@
             </li>
         </ul>
     </nav>
-
     <main id="main">
-    <h2 id="mainTitle">CSS란 무엇인가?</h2>
-    <p style="margin-top: 40px;">
-        Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation
-        of a document written in a markup language such as HTML.[1] CSS is a cornerstone technology
-        of the World Wide Web, alongside HTML and JavaScript.[2]
-        CSS is designed to enable the separation of presentation and content, including layout,
-        colors, and fonts.[3] This separation can improve content accessibility; provide more flexibility
-        and control in the specification of presentation characteristics; enable multiple web pages to
-        share formatting by specifying the relevant CSS in a separate .css file, which reduces complexity
-        and repetition in the structural content
-    </p>
+        <h2 id="mainTitle">&lt;iframe&gt; tag</h2>
+        <iframe id="video1" width="90%" height=600px src="https://www.youtube.com/embed/lSazqI-y9so" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <div id="dis">
+            <p id="subTitle">Definition and Usage</p>
+            <p id="content" style="margin-top: 40px;"> 
+            The &lt;iframe&gt; tag specifies an inline frame. <br>
 
-    <div id="disqus_thread"></div>
+            An inline frame is used to embed another document within the current HTML document. <br>
+
+            Tip: Use CSS to style the &lt;iframe&gt; (see example below). <br>
+
+            Tip: It is a good practice to always include a title attribute for the &lt;iframe&gt;. This is used by screen readers to read out what the content of the &lt;iframe&gt; is.
+            </p>
+        </div>
+        <div id="disqus_thread"></div>
         <script>
             /**
             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -81,6 +82,5 @@
             })();
         </script>
         <!--End of Tawk.to Script-->
-    </main>
 </body>
 </html>

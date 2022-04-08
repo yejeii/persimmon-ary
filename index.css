@@ -77,3 +77,16 @@
     overflow: visible;
     padding: 0;
 }
+iframe{
+    margin: 20px;
+}
+#subTitle{
+    margin-left: 20px;
+    border: 1px solid red;
+    background-color: #ef7642;
+    color: #ffffff;
+    font-size: 24px;
+}
+#content{
+    margin-left: 20px;
+}
