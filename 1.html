@@ -68,6 +68,7 @@
         <li><a href="2.html">CSS</a></li>
         <li><a href="3.html">JavaScript</a></li>
     </ol>
+</div>
 <div id="article">
     <h2>HTML이란 무엇인가?</h2>
     <p><a href="https://www.w3.org/TR/2011/WD-html5-20110405/"  title="HTML5 specification">Hypertext Markup Language(HTML)</a> is the standard markup language for <strong>creating <u>web</u> pages</strong> and web applications.
@@ -77,7 +78,66 @@
     <p style="margin-top: 40px;">
     HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets.
     </p>
+    <h2>&lt;iframe&gt; tag</h2>
+    <iframe
+        id="video1"
+        width="90%"
+        height="600px"
+        src="https://www.youtube.com/embed/lSazqI-y9so"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen="allowfullscreen"></iframe>
+    <h3>Definition and Usage</h3>
+    <p style="margin-top: 40px;">
+        The &lt;iframe&gt; tag specifies an inline frame.
+        <br>
+
+        An inline frame is used to embed another document within the current HTML
+        document.
+        <br>
+
+        Tip: Use CSS to style the &lt;iframe&gt; (see example below).
+        <br>
+
+        Tip: It is a good practice to always include a title attribute for the
+        &lt;iframe&gt;. This is used by screen readers to read out what the content of
+        the &lt;iframe&gt; is.
+    </p>
 </div>
+<div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://web-njxwaguw3m.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/624faf13c72df874911dfa92/1g03k7p9k';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+        </script>
+        <!--End of Tawk.to Script-->
 </div>
     </body>
 </html>
