@@ -1,117 +1,179 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>WEB1 - WEB </title>
+        <title>WEB1 - WEB
+        </title>
         <meta charset="utf-8">
         <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GYYC1R86H9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        <script
+            async="async"
+            src="https://www.googletagmanager.com/gtag/js?id=G-GYYC1R86H9"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-  gtag('config', 'G-GYYC1R86H9');
-</script>
-<style>
-    body {
-        margin: 0;
-    }
+            gtag('config', 'G-GYYC1R86H9');
+            
+            // 객체 생성
+            var Body = {
+                setColor : function(color){
+                    document.querySelector('body').style.color = color;
+                },
+                setBackgroundColor: function(color) {
+                document.querySelector('body').style.backgroundColor = color;
+                }
+            }
 
-    a {
-        color: black;
-        text-decoration: none;
-    }
+            var Links = {
+                setColor: function (color) {
+                    var alist = document.querySelectorAll('a');
+                    var i = 0;
+                    while (i < alist.length) {
+                        alist[i].style.color = color;
+                        i = i + 1;
+                    }
+                }
+            }
 
-    h1 {
-        font-size: 45px;
-        text-align: center;
-        border-bottom: 1px solid gray;
-        margin: 0;
-        padding: 20px;
-    }
+            // 함수로 설정
+            // a 태그의 텍스트 색 설정
+            function setColor(color) {
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while (i < alist.length) {
+                    alist[i].style.color = color;
+                    console.log(alist[i]);
+                    i = i + 1;
+                }
+            }
 
-    #grid ol {
-        border-right: 1px solid gray;
-        width: 100px;
-        margin: 0;
-        padding: 20px;
-    }
+            // body의 색 설정
+            function setBodyColor(b_color,t_color){
+                document.querySelector('body').style.backgroundColor = b_color; 
+                document.querySelector('body').style.color = t_color; 
+            }
 
-    #grid {
-        display: grid;
-        grid-template-columns: 150px 1fr;
-    }
-    
-    #article {
-        padding-left: 25px;
-    }
+            // 버튼 클릭시 동작
+            function nightDayHandler(self) {
+                var target = document.querySelector('body');
+                if (self.value === 'night') {
+                    // setBodyColor('black','white');
+                    // setColor('powderblue');
+                    Body.setBackgroundColor('black');
+                    Body.setColor('white');
+                    Links.setColor('powderblue');
+                    self.value = 'day'
+                } else {
+                    // setBodyColor('white','black');
+                    // setColor('blue');  
+                    Body.setBackgroundColor('white');
+                    Body.setColor('black');
+                    Links.setColor('blue');
+                    self.value = 'night'
+                }
+            }
+        </script>
+        <style>
+            body {
+                margin: 0;
+            }
 
-    @media(max-width :800px){
-        #grid {
-            display: block;
-        }
-        #grid ol {
-            border-right: none;
-        }
-        h1 {
-            border-bottom: none;
-        }
+            a {
+                color: black;
+                text-decoration: none;
+            }
 
-    }
-</style>
+            h1 {
+                font-size: 45px;
+                text-align: center;
+                border-bottom: 1px solid gray;
+                margin: 0;
+                padding: 20px;
+            }
+
+            #grid ol {
+                border-right: 1px solid gray;
+                width: 100px;
+                margin: 0;
+                padding: 20px;
+            }
+
+            #grid {
+                display: grid;
+                grid-template-columns: 150px 1fr;
+            }
+
+            #article {
+                padding-left: 25px;
+            }
+
+            @media(max-width :800px) {
+                #grid {
+                    display: block;
+                }
+                #grid ol {
+                    border-right: none;
+                }
+                h1 {
+                    border-bottom: none;
+                }
+
+            }
+        </style>
     </head>
     <body>
-        <!-- <input type="button" value="night" onclick="
-        document.querySelector('body').style.backgroundColor = 'black';
-        document.querySelector('body').style.color = 'white';
-        ">
-    
-        <input type="button" value="day" onclick="
-        document.querySelector('body').style.backgroundColor = 'white';
-        document.querySelector('body').style.color = 'black';
-        "> -->
-        <input
-            type="button"
-            value="night"
-            onclick=" var target = document.querySelector('body');
-        if(this.value === 'night') {
-            target.style.backgroundColor = 'black';
-            target.style.color= 'whithe';
-            this.value = 'day';
-        } else {
-            target.style.backgroundColor = 'white';
-            target.style.color= 'black';
-            this.value = 'night';
-        }
-        ">
-        <h1><a href="index.html">WEB - 심예지</a></h1>
-        <div id = "grid">
+        <input type="button" value="night" onclick="nightDayHandler(this);">
+        <h1>
+            <a href="index.html">WEB - 심예지</a>
+        </h1>
+        <div id="grid">
             <ol>
-                <li><a href="1.html">HTML</a></li>
-                <li><a href="2.html">CSS</a></li>
-                <li><a href="3.html">JavaScript</a></li>
+                <li>
+                    <a href="1.html">HTML</a>
+                </li>
+                <li>
+                    <a href="2.html">CSS</a>
+                </li>
+                <li>
+                    <a href="3.html">JavaScript</a>
+                </li>
             </ol>
         </div>
         <div id="article">
             <h2>WEB이란 무엇인가?</h2>
             <p style="margin-top: 40px;">
-                The World Wide Web (WWW), commonly known as the Web, is the world's dominant software platform.[1] It was originally a hypertext document management system[2] accessed over the Internet.[3]
-
-                The resources of the Web are transferred via the Hypertext Transfer Protocol (HTTP), may be accessed by users by a software application called a web browser, and are published by a software application called a web server.
-                
-                Web resources may be any type of downloaded media, but web pages are hypertext documents formatted in Hypertext Markup Language (HTML). Special HTML syntax displays embedded hyperlinks with URLs, which permits users to navigate to other web resources. In addition to text, web pages may contain references to images, video, audio, and software components, which are either displayed or internally executed in the user's web browser to render pages or streams of multimedia conten
+                The World Wide Web (WWW), commonly known as the Web, is the world's dominant
+                software platform.[1] It was originally a hypertext document management
+                system[2] accessed over the Internet.[3] The resources of the Web are
+                transferred via the Hypertext Transfer Protocol (HTTP), may be accessed by users
+                by a software application called a web browser, and are published by a software
+                application called a web server. Web resources may be any type of downloaded
+                media, but web pages are hypertext documents formatted in Hypertext Markup
+                Language (HTML). Special HTML syntax displays embedded hyperlinks with URLs,
+                which permits users to navigate to other web resources. In addition to text, web
+                pages may contain references to images, video, audio, and software components,
+                which are either displayed or internally executed in the user's web browser to
+                render pages or streams of multimedia conten
             </p>
         </div>
     </div>
-    <input id="night_day2" type="button" value="night" onclick=" let target2 = document.querySelector('#night_day2');
+    <input
+        id="night_day2"
+        type="button"
+        value="night"
+        onclick="
+     let target2 = document.querySelector('#night_day2');
     if(target2.value === 'night') {
         document.querySelector('body').style.backgroundColor = 'black';
       document.querySelector('body').style.color= 'white';
-      target2.value = 'day';   
+      target2.value = 'day';
     } else {
       document.querySelector('body').style.backgroundColor = 'white';
       document.querySelector('body').style.color= 'black';
-      target2.value = 'night';   
+      target2.value = 'night';
     }
     ">
 </body>
